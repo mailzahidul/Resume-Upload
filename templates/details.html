@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mt-3 bg-light p-5">
+    <h1 class="text-center text-dark">Resume</h1>
+    <p>Application Id: {{ object.id }}</p>    
+    <img class="float-end" src="{{ object.profile_img.url }}" alt="" height="150" width="150">
+    <p>Name: {{ object.name }}</p> 
+    <p>Date of birth: {{ object.dob }}</p> 
+    <p>Gender: {{ gender }}</p> 
+    <p>Locality: {{ object.locality }}</p> 
+    <p>City: {{ object.city }}</p> 
+    <p>Post Code: {{ object.pin_code }}</p> 
+    <p>State: {{ object.state }}</p> 
+    <p>Mobile No: {{ object.mobile }}</p> 
+    <p>Email: {{ object.email }}</p> 
+    <p>Preffered Location: {{ object.job_city }}</p> 
+    <p>Attachment File: <a href="{{ object.my_file.url }}" download="{{ object.my_file.url }}">Download</a></p> 
+
+
+
+</div>
+
+
+{% endblock %}

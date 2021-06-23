@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="shadow">
+        <h2 class="text-center alert-success py-3">Resume Information</h2>
+        <form action="" method="POST" class="p-5" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ forms.as_p }}
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+    </div>
+
+{% endblock %}
+
+{% block sidebar %}
+    <div class="list-group pt-1">
+        <h2 class="p-2 text-primary bg-warning">Uploaded Data</h2>
+    {% for i in data %}                    
+         <a class="list-group-item pl-2 py-1" href="{% url 'details' i.id %}">{{ forloop.counter }}.  {{ i }}</a>
+    {% endfor %}                    
+    </div>
+{% endblock %}

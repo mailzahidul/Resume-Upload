@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#datepicker" ).datepicker();
+        });
+    </script>
+</head>
+<body>
+    <div class="container bg-light">
+        <div class="row">
+            <h2 class="text-danger text-center alert-danger py-3">Uploaded Resume</h2>
+            <div class="col-sm-8 pt-3">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+            <div class="col-sm-4 pt-3">
+                {% block sidebar %}
+                
+                {% endblock %}
+            </div>
+        </div>
+            <!-- Start Footer -->
+    <footer class="container-fluid bg-dark text-center mt-5">
+        <small class="text-white">Copyright &copy; 2021 || Designed By GeekyShows || </small>
+        <!-- <img src="{% static 'app/images/payment.png' %}" alt="" srcset="" class="img-fluid" height="2px"> -->
+    </footer> <!-- End Footer -->
+    </div>
+</body>
+</html>
